@@ -1,0 +1,13 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+.kotlin
+
+# Ignore Gradle build output directory
+build
+out
+# Local configuration file (sdk path, etc)
+local.properties
+.idea/*
+!.idea/codeStyles
+*.iml
+gradle.properties
