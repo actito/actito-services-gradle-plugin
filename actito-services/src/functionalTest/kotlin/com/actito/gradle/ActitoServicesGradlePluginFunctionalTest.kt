@@ -99,30 +99,30 @@ class ActitoServicesGradlePluginFunctionalTest {
     }
 
     @Test
-    fun `builds with AGP 7_3_0`() {
-        loadProject("app-no-flavors", agpVersion = "7.3.0")
-
-        val runner = createGradleRunner(GradleVersion.version("7.4"), task = "assembleDebug")
-        val result = runner.build()
-
-        assertEquals(TaskOutcome.SUCCESS, result.task(":app:processDebugActitoServices")?.outcome)
-    }
-
-    @Test
-    fun `build with AGP 7_4_1`() {
-        loadProject("app-no-flavors", agpVersion = "7.4.1")
-
-        val runner = createGradleRunner(GradleVersion.version("7.5"), task = "assembleDebug")
-        val result = runner.build()
-
-        assertEquals(TaskOutcome.SUCCESS, result.task(":app:processDebugActitoServices")?.outcome)
-    }
-
-    @Test
     fun `build with AGP 8_0_0`() {
         loadProject("app-no-flavors", agpVersion = "8.0.0")
 
         val runner = createGradleRunner(GradleVersion.version("8.0"), task = "assembleDebug")
+        val result = runner.build()
+
+        assertEquals(TaskOutcome.SUCCESS, result.task(":app:processDebugActitoServices")?.outcome)
+    }
+
+    @Test
+    fun `build with AGP 8_2_0`() {
+        loadProject("app-no-flavors", agpVersion = "8.2.0")
+
+        val runner = createGradleRunner(GradleVersion.version("8.2"), task = "assembleDebug")
+        val result = runner.build()
+
+        assertEquals(TaskOutcome.SUCCESS, result.task(":app:processDebugActitoServices")?.outcome)
+    }
+
+    @Test
+    fun `build with AGP 8_3_0`() {
+        loadProject("app-no-flavors", agpVersion = "8.3.0")
+
+        val runner = createGradleRunner(GradleVersion.version("8.4"), task = "assembleDebug")
         val result = runner.build()
 
         assertEquals(TaskOutcome.SUCCESS, result.task(":app:processDebugActitoServices")?.outcome)
