@@ -31,6 +31,7 @@ Add the gradle plugin repository to your app's `settings.gradle`
 
 ```gradle
 pluginManagement {
+    repositories {
         gradlePluginPortal()
     }
 }
