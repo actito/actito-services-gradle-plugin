@@ -77,5 +77,5 @@ apply plugin: 'com.actito.gradle.actito-services'
 ## Usage
 
 To connect your app with Actito:
-- Place the provided `actito-services.json` configuration file inside your app module (e.g. app/actito-services.json).
+- Place the provided `actito-services.json` configuration file inside your app module (e.g. `app/actito-services.json`).
 - The plugin will automatically detect the file and configure the Actito SDK for you.
