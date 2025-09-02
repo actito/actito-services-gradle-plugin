@@ -1,4 +1,4 @@
-[<img src="https://raw.githubusercontent.com/actito/actito-services-gradle-plugin/main/assets/logo.png"/>](https://actito.com)
+[<img src="./assets/logo.png"/>](https://actito.com)
 
 # Actito Services Gradle Plugin
 
