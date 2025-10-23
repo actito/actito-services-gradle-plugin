@@ -1,25 +1,43 @@
 plugins {
-    id("com.gradle.plugin-publish")
+    id("com.vanniktech.maven.publish")
 }
 
-val properties = loadProperties(rootProject.file("local.properties"))
-val awsAccessKey: String? = System.getenv("AWS_ACCESS_KEY_ID") ?: properties.getProperty("aws.s3.access_key_id")
-val awsSecretKey: String? = System.getenv("AWS_SECRET_ACCESS_KEY") ?: properties.getProperty("aws.s3.secret_access_key")
-
 afterEvaluate {
-    val artifactChannel = if (version.toString().isStableVersion()) "releases" else "prereleases"
+    mavenPublishing {
+        publishToMavenCentral()
+        signAllPublications()
 
-    if (awsAccessKey != null && awsSecretKey != null) {
-        publishing {
-            repositories {
-                maven {
-                    name = "S3"
-                    url = uri("s3://maven.notifica.re/$artifactChannel")
-                    credentials(AwsCredentials::class) {
-                        accessKey = awsAccessKey
-                        secretKey = awsSecretKey
-                    }
+        coordinates(
+            groupId = project.group.toString(),
+            artifactId = project.name,
+            version = project.version.toString(),
+        )
+
+        pom {
+            name.set("Actito Services Gradle Plugin")
+            description.set("Gradle plug-in to configure Android applications with an actito-services.json file.")
+            url.set("https://github.com/actito/actito-services-gradle-plugin/")
+
+            licenses {
+                license {
+                    name.set("MIT")
+                    url.set("https://opensource.org/license/mit")
+                    distribution.set("https://opensource.org/license/mit")
                 }
+            }
+
+            developers {
+                developer {
+                    id.set("Actito")
+                    name.set("Actito")
+                    url.set("https://github.com/actito/")
+                }
+            }
+
+            scm {
+                url.set("https://github.com/actito/actito-services-gradle-plugin/")
+                connection.set("scm:git:git://github.com/actito/actito-services-gradle-plugin.git")
+                developerConnection.set("scm:git:ssh://git@github.com/actito/actito-services-gradle-plugin.git")
             }
         }
     }
