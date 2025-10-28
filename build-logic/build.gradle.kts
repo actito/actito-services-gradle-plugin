@@ -8,7 +8,7 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.plugins.gradle.publish.asDependency())
+    implementation(libs.plugins.mavenPublish.asDependency())
 }
 
 fun Provider<PluginDependency>.asDependency(): Provider<String> =
