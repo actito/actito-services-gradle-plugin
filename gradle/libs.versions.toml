@@ -1,5 +1,5 @@
 [versions]
-actito-services = "1.0.0-SNAPSHOT"
+actito-services = "1.0.0"
 kotlin = "2.0.0"
 android-gradle-api = "7.3.0"
 google-gson = "2.10.1"
