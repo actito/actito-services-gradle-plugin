@@ -1,4 +1,4 @@
-[<img src="./assets/logo.png"/>](https://actito.com)
+[<img src="https://cdn-mobile.actito.com/logo.png"/>](https://actito.com)
 
 # Actito Services Gradle Plugin
 
@@ -27,7 +27,7 @@ Table of contents
 
 #### Plugins DSL
 
-Add the gradle plugin repository to your app's `settings.gradle`
+Add the Gradle plugin repository to your app's `settings.gradle`
 
 ```gradle
 pluginManagement {
