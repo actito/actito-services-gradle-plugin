@@ -27,12 +27,12 @@ Table of contents
 
 #### Plugins DSL
 
-Add the Gradle plugin repository to your app's `settings.gradle`
+Add the Maven Central repository to your app's `settings.gradle`
 
 ```gradle
 pluginManagement {
     repositories {
-        gradlePluginPortal()
+        mavenCentral()
     }
 }
 ```
@@ -60,7 +60,7 @@ Add the Actito Services Gradle Plugin to your project's `build.gradle` dependenc
 ```gradle
 buildscript {
     repositories {
-        gradlePluginPortal()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.actito.gradle:actito-services:1.0.0'
